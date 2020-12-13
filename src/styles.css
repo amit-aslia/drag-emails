@@ -81,4 +81,14 @@
     padding: 32px;
     border-radius: 4px;
   }
+
+  .opacity {
+    opacity: 0.5;
+  }
+  .dropArray1 {
+    background-color: green !important;
+  }
+  .dropArray2 {
+    background-color: yellow !important;
+  }
   

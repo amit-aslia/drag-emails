@@ -8,6 +8,7 @@
   ],
   "main": "src/index.jsx",
   "dependencies": {
+    "lodash": "^4.17.20",
     "random-id": "1.0.4",
     "react": "16.12.0",
     "react-dom": "16.12.0",
