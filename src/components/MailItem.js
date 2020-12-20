@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { dropArray1 } from "../data/dropArray";
 
 export default function MailItem({ item, setdropSidebarUi, dropSidebarUi }) {
   const [ opacity, setOpacity ] = useState(false);
+  
   const handleDragStart = (e, item) => {
     setOpacity(true);
     const myPath = item.path.split('.')[0];
     const drop1 = dropArray1.some(k => k === myPath);
     drop1 ? setdropSidebarUi('dropArray1') : setdropSidebarUi('dropArray2')
     e.dataTransfer.setData('data', JSON.stringify(item));
-  } 
+  }
+
+  useEffect(() => {
+    dropSidebarUi ? null : setOpacity(false);
+  },[dropSidebarUi]);
+
   return (
     <li 
       draggable 
